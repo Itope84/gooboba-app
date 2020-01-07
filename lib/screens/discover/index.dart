@@ -177,6 +177,11 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
           Container(
             padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 50.0),
             child: _discoverBox(),
+          ),
+          Container(
+            color: Colors.white,
+            padding: EdgeInsets.all(25.0),
+            height: 400.0,
           )
         ],
       ),

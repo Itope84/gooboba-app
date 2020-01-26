@@ -4,6 +4,7 @@ import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:gooboba_mobile/bloc/main.dart';
 import 'package:gooboba_mobile/routes.dart';
 import 'package:gooboba_mobile/screens/discover/index.dart';
+import 'package:gooboba_mobile/screens/onboarding/index.dart';
 import 'package:gooboba_mobile/theme/style.dart';
 import 'package:provider/provider.dart';
 
@@ -13,12 +14,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    FlutterStatusbarcolor.setStatusBarColor(Colors.white);
-    FlutterStatusbarcolor.setStatusBarWhiteForeground(false);
+    FlutterStatusbarcolor.setStatusBarColor(primaryColor);
+    FlutterStatusbarcolor.setStatusBarWhiteForeground(true);
     FlutterStatusbarcolor.setNavigationBarColor(Colors.green);
     FlutterStatusbarcolor.setNavigationBarWhiteForeground(true);
 
-    print("geeee");
     // SystemChrome.setEnabledSystemUIOverlays(
     // [SystemUiOverlay.top, SystemUiOverlay.bottom]);
     // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
@@ -34,7 +34,7 @@ class MyApp extends StatelessWidget {
         theme: appTheme,
         navigatorObservers: [],
         debugShowCheckedModeBanner: false,
-        initialRoute: DiscoverScreen.routeName,
+        initialRoute: OnboardingIndex.routeName,
       ),
     );
   }

@@ -6,19 +6,20 @@ TextStyle textStyle =
 
 // final Color primaryColorDark = HexColor("070e46");
 final Color primaryColor = HexColor("#4A0068");
-// final Color lightPrimaryBg = HexColor('E8EAFF');
+final Color accentGreen = HexColor('3D8962');
 
 ThemeData appTheme = new ThemeData(
-  primaryColor: primaryColor,
-  // primaryColorDark: primaryColorDark,
-  fontFamily: "Ubuntu",
-  primarySwatch: MaterialColor(
-    HexColor.getColorFromHex("#4A0068"),
-    primarySwatch,
-  ),
+    primaryColor: primaryColor,
+    // primaryColorDark: primaryColorDark,
+    fontFamily: "Ubuntu",
+    primarySwatch: MaterialColor(
+      HexColor.getColorFromHex("#4A0068"),
+      primarySwatch,
+    ),
+    accentColor: accentGreen
 
-  // canvasColor: Colors.transparent,
-);
+    // canvasColor: Colors.transparent,
+    );
 
 Map<int, Color> primarySwatch = {
   50: Color.fromRGBO(74, 0, 104, .1),
@@ -50,10 +51,23 @@ TextStyle mainHeaderTextStyle =
 
 TextStyle whiteMainHeader = mainHeaderTextStyle.copyWith(color: Colors.white);
 
-TextStyle paragraphTextStyle =
-    TextStyle(fontSize: 16.0, color: Colors.black, fontWeight: FontWeight.w500);
+TextStyle header2TextStyle =
+    TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold);
+
+TextStyle whiteHeader2TextStyle =
+    header2TextStyle.copyWith(color: Colors.white);
+
+TextStyle paragraphTextStyle = TextStyle(
+  fontSize: 16.0,
+  color: Colors.black,
+  fontWeight: FontWeight.w500,
+  height: 1.5,
+);
 
 TextStyle boldParagraphTextStyle =
     paragraphTextStyle.copyWith(fontWeight: FontWeight.bold);
 
 TextStyle mutedText = TextStyle(color: Colors.grey[400]);
+
+TextStyle f18 = TextStyle(fontSize: 18.0);
+TextStyle f18Bold = f18.copyWith(fontWeight: FontWeight.bold);

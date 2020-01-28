@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gooboba_mobile/screens/discover/index.dart';
 import 'package:gooboba_mobile/screens/onboarding/default-slide.dart';
 import 'package:gooboba_mobile/theme/style.dart';
 import 'package:gooboba_mobile/widgets/onboarding.dart';
@@ -10,7 +11,7 @@ class OnboardingIndex extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnboardingLayout(
       onGetStarted: () {
-        print("Getting started");
+        Navigator.of(context).pushReplacementNamed(DiscoverScreen.routeName);
       },
       onSkip: () {
         print("Skipping");

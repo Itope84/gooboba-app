@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gooboba_mobile/layouts/top-level.dart';
 import 'package:gooboba_mobile/theme/style.dart';
 import 'package:gooboba_mobile/utils/enums/pages.dart';
+import 'package:gooboba_mobile/widgets/buttons.dart';
 
 class DiscoverScreen extends StatefulWidget {
   static final String routeName = '/discover';
@@ -157,6 +158,11 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
                         SizedBox(
                           height: 15.0,
                         ),
+                        StyledBlockButton(
+                          child: Text("Get Started"),
+                          color: accentGreen,
+                          onPressed: () {},
+                        )
                       ],
                     ),
                   ),
@@ -180,8 +186,46 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
           ),
           Container(
             color: Colors.white,
-            padding: EdgeInsets.all(25.0),
-            height: 400.0,
+            padding: EdgeInsets.symmetric(vertical: 25.0),
+            height: 350.0,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  "The Gooboba Assurance",
+                  style:
+                      mainHeaderTextStyle.copyWith(fontWeight: FontWeight.w900),
+                ),
+                Expanded(
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      Flexible(
+                        flex: 5,
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 20.0),
+                          child: Text(
+                            "You are always covered with the help of our insurance and risk managers.",
+                            style: paragraphTextStyle.copyWith(
+                                height: 2.0, fontSize: 14.0),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        flex: 4,
+                        child: Container(
+                          child: Image.asset(
+                            'assets/images/car-clipped.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                )
+              ],
+            ),
           )
         ],
       ),

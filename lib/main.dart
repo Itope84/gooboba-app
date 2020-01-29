@@ -10,20 +10,25 @@ import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
   @override
-  Widget build(BuildContext context) {
-    FlutterStatusbarcolor.setStatusBarColor(primaryColor);
-    FlutterStatusbarcolor.setStatusBarWhiteForeground(true);
-    FlutterStatusbarcolor.setNavigationBarColor(Colors.green);
-    FlutterStatusbarcolor.setNavigationBarWhiteForeground(true);
+  _MyAppState createState() => _MyAppState();
+}
 
-    // SystemChrome.setEnabledSystemUIOverlays(
-    // [SystemUiOverlay.top, SystemUiOverlay.bottom]);
-    // SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-    // systemNavigationBarColor: Colors.blue,
-    // systemNavigationBarDividerColor: Colors.green));
+class _MyAppState extends State<MyApp> {
+  bool _isInitialised = false;
+
+  @override
+  Widget build(BuildContext context) {
+    if (!_isInitialised) {
+      FlutterStatusbarcolor.setStatusBarColor(primaryColor);
+      FlutterStatusbarcolor.setStatusBarWhiteForeground(true);
+      FlutterStatusbarcolor.setNavigationBarColor(primaryColor);
+      FlutterStatusbarcolor.setNavigationBarWhiteForeground(true);
+
+      _isInitialised = true;
+    }
 
     return ChangeNotifierProvider<MainBloc>(
       create: (context) => MainBloc(),

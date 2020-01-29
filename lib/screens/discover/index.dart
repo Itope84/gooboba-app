@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:gooboba_mobile/layouts/top-level.dart';
 import 'package:gooboba_mobile/theme/style.dart';
 import 'package:gooboba_mobile/utils/enums/pages.dart';
@@ -176,6 +177,9 @@ class _DiscoverScreenState extends State<DiscoverScreen> {
 
   @override
   Widget build(BuildContext context) {
+    FlutterStatusbarcolor.setStatusBarColor(primaryColor);
+    FlutterStatusbarcolor.setStatusBarWhiteForeground(true);
+
     return TopLevelLayout(
       activePage: Pages.discover,
       child: ListView(

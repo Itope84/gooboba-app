@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gooboba_mobile/screens/auth/email.dart';
 import 'package:gooboba_mobile/screens/discover/index.dart';
 import 'package:gooboba_mobile/screens/onboarding/default-slide.dart';
 import 'package:gooboba_mobile/theme/style.dart';
@@ -11,7 +12,7 @@ class OnboardingIndex extends StatelessWidget {
   Widget build(BuildContext context) {
     return OnboardingLayout(
       onGetStarted: () {
-        Navigator.of(context).pushReplacementNamed(DiscoverScreen.routeName);
+        Navigator.of(context).pushReplacementNamed(AuthEmail.routeName);
       },
       onSkip: () {
         print("Skipping");

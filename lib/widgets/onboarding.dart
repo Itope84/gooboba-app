@@ -35,7 +35,7 @@ class _OnboardingLayoutState extends State<OnboardingLayout> {
         body: ListView(
           children: <Widget>[
             Container(
-              height: 600.0,
+              height: MediaQuery.of(context).size.height * 0.7,
               child: PageView(
                 controller: _controller,
                 onPageChanged: (int page) {

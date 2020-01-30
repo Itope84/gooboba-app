@@ -20,7 +20,11 @@ class TopLevelLayout extends StatelessWidget {
         String url}) {
       return InkWell(
         child: Container(
-          padding: EdgeInsets.only(top: 15.0, bottom: 10.0),
+          width: MediaQuery.of(context).size.width * 0.2,
+          padding: EdgeInsets.only(
+            top: 15.0,
+            bottom: 10.0,
+          ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
@@ -55,6 +59,7 @@ class TopLevelLayout extends StatelessWidget {
       backgroundColor: Theme.of(context).primaryColor,
       bottomNavigationBar: BottomAppBar(
         child: Container(
+          padding: EdgeInsets.only(bottom: 10.0),
           color: Theme.of(context).primaryColor,
           child: Row(
             mainAxisSize: MainAxisSize.max,
@@ -63,27 +68,27 @@ class TopLevelLayout extends StatelessWidget {
               bottomBarIcon(
                   icon: MdiIcons.truck,
                   title: "List your car",
-                  isActive: activePage != Pages.discover,
+                  isActive: activePage == Pages.listCar,
                   url: DiscoverScreen.routeName),
               bottomBarIcon(
                   icon: CustomIcons.route,
                   title: "Activity",
-                  isActive: activePage == Pages.discover,
+                  isActive: activePage == Pages.activity,
                   url: DiscoverScreen.routeName),
               bottomBarIcon(
                   icon: MdiIcons.magnify,
                   title: "Discover",
-                  isActive: activePage != Pages.discover,
+                  isActive: activePage == Pages.discover,
                   url: DiscoverScreen.routeName),
               bottomBarIcon(
                   icon: CustomIcons.inbox,
                   title: "Inbox",
-                  isActive: activePage == Pages.discover,
+                  isActive: activePage == Pages.inbox,
                   url: DiscoverScreen.routeName),
               bottomBarIcon(
                   icon: CustomIcons.account_circle,
                   title: "Account",
-                  isActive: activePage == Pages.discover,
+                  isActive: activePage == Pages.account,
                   url: DiscoverScreen.routeName),
             ],
           ),

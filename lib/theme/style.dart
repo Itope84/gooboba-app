@@ -16,7 +16,11 @@ ThemeData appTheme = new ThemeData(
       HexColor.getColorFromHex("#4A0068"),
       primarySwatch,
     ),
-    accentColor: accentGreen
+    accentColor: accentGreen,
+    textTheme: TextTheme(
+      body2: paragraphTextStyle.copyWith(
+          fontSize: 14.0, fontWeight: FontWeight.w500, color: Colors.black87),
+    )
 
     // canvasColor: Colors.transparent,
     );

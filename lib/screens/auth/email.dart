@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:gooboba_mobile/bloc/main.dart';
 import 'package:gooboba_mobile/screens/auth/password.dart';
+import 'package:gooboba_mobile/screens/auth/signup.dart';
 import 'package:gooboba_mobile/theme/style.dart';
 import 'package:gooboba_mobile/widgets/buttons.dart';
 import 'package:gooboba_mobile/widgets/inputs.dart';
@@ -81,7 +82,9 @@ class _AuthEmailState extends State<AuthEmail> {
             ),
             onPressed: () {
               _bloc.email = _email;
-              Navigator.of(context).pushNamed(AuthPassword.routeName);
+              Navigator.of(context).pushNamed(_email == 'sup'
+                  ? AuthPassword.routeName
+                  : AuthSignupScreen.routeName);
             },
           ),
           SizedBox(

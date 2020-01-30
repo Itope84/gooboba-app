@@ -41,9 +41,8 @@ class RoundedMaterialTextFormField extends StatelessWidget {
       focusNode: focus,
       obscureText: obscureText,
       style: style ?? TextStyle(),
-      textInputAction: this.textInputAction ?? nextFocus != null
-          ? TextInputAction.next
-          : TextInputAction.done,
+      textInputAction: this.textInputAction ??
+          (nextFocus != null ? TextInputAction.next : TextInputAction.done),
       onFieldSubmitted: (v) {
         if (this.nextFocus != null) {
           FocusScope.of(context).requestFocus(this.nextFocus);
@@ -51,6 +50,7 @@ class RoundedMaterialTextFormField extends StatelessWidget {
       },
       keyboardType: keyboardType ?? TextInputType.text,
       decoration: InputDecoration(
+        contentPadding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 20.0),
         labelText: hintText ?? "Enter value",
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
@@ -63,7 +63,7 @@ class RoundedMaterialTextFormField extends StatelessWidget {
           ),
         ),
         enabledBorder: new OutlineInputBorder(
-          borderSide: BorderSide(color: Colors.grey),
+          borderSide: BorderSide(color: Colors.grey[400]),
           borderRadius: const BorderRadius.all(
             const Radius.circular(8.0),
           ),
